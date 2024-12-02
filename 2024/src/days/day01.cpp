@@ -3,7 +3,7 @@
 #include <regex>
 #include <map>
 
-std::string exampleInput = R""""(
+static std::string exampleInput = R""""(
 3   4
 4   3
 2   5
@@ -12,7 +12,7 @@ std::string exampleInput = R""""(
 3   3
 )"""";
 
-std::string puzzleInput = R""""(
+static std::string puzzleInput = R""""(
 40885   43247
 14780   86274
 35132   49508
