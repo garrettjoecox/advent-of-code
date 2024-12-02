@@ -1,7 +1,9 @@
 import { day01 } from "./days/day01.ts";
+import { day02 } from "./days/day02.ts";
 
 const days = [
   day01,
+  day02,
 ];
 
 if (import.meta.main) {
