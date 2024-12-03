@@ -6,6 +6,7 @@ std::vector<std::function<void()>> days = {
     day00,
     day01,
     day02,
+    day03,
 };
 
 int main(int argc, char *argv[]) {
