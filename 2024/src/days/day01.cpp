@@ -2,6 +2,8 @@
 #include <cassert>
 #include <regex>
 #include <map>
+#include <sstream>
+#include <string>
 
 static std::string exampleInput = R""""(
 3   4
@@ -1015,22 +1017,25 @@ static std::string puzzleInput = R""""(
 25854   59466
 )"""";
 
+
 void parseLists(std::string input, std::vector<std::vector<int32_t>>& result) {
     result.resize(2);
 
-    std::regex lineRegex(R"((\d+)\s+(\d+))");
-    std::sregex_iterator it(input.begin(), input.end(), lineRegex);
-    std::sregex_iterator end;
+    std::istringstream inputStream(input);
+    std::string line;
 
-    while (it != end) {
-        std::smatch match = *it;
-        int first = std::stoi(match[1].str());
-        int second = std::stoi(match[2].str());
+    while (std::getline(inputStream, line, '\n')) {
+        if (line.empty()) continue;
 
-        result[0].push_back(first);
-        result[1].push_back(second);
+        std::regex numberRegex(R"((\d+)\s+(\d+))", std::regex::ECMAScript);
+        std::smatch match;
+        if (!std::regex_match(line, match, numberRegex)) {
+            printf("Something wrong with: %s\n", line.c_str());
+            continue;
+        }
 
-        ++it;
+        result[0].push_back(std::stoi(match[1].str()));
+        result[1].push_back(std::stoi(match[2].str()));
     }
 
     // Ensure we have two lists

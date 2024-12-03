@@ -3,6 +3,7 @@
 #include <iostream>
 
 std::vector<std::function<void()>> days = {
+    day00,
     day01,
     day02,
 };
@@ -14,12 +15,12 @@ int main(int argc, char *argv[]) {
     }
 
     int day = std::stoi(argv[1]);
-    if (day < 1 || day > days.size()) {
+    if (day < 0 || day > days.size()) {
         std::cerr << "Invalid day: " << day << std::endl;
         return 1;
     }
 
-    days[day - 1]();
+    days[day]();
 
     return 0;
 }
