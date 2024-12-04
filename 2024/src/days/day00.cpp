@@ -15,7 +15,7 @@ static std::string puzzleInput = R""""(
 200
 )"""";
 
-void parse(std::string input, std::vector<int32_t>& result) {
+static void parse(std::string input, std::vector<int32_t>& result) {
     std::istringstream inputStream(input);
     std::string line;
 
@@ -33,7 +33,7 @@ void parse(std::string input, std::vector<int32_t>& result) {
     }
 }
 
-int32_t doTheThing(std::string input) {
+static int32_t doTheThing(std::string input) {
     std::vector<int32_t> things;
 
     parse(input, things);
