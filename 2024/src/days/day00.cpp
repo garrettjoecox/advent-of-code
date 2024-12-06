@@ -47,9 +47,17 @@ static int32_t doTheThing(std::string input) {
 }
 
 void day00() {
-    int32_t partOneOutput = doTheThing(exampleInput);
+    int32_t partOneExampleOutput = doTheThing(exampleInput);
+    printf("Part One Example: %d\n", partOneExampleOutput);
+    assert(partOneExampleOutput == 30);
+
+    int32_t partOneOutput = doTheThing(puzzleInput);
     printf("Part One: %d\n", partOneOutput);
-    assert(partOneOutput == 30);
+    assert(partOneOutput == 300);
+
+    int32_t partTwoExampleOutput = doTheThing(exampleInput);
+    printf("Part Two Example: %d\n", partTwoExampleOutput);
+    assert(partTwoExampleOutput == 30);
 
     int32_t partTwoOutput = doTheThing(puzzleInput);
     printf("Part Two: %d\n", partTwoOutput);
