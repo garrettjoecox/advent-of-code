@@ -2,12 +2,14 @@ import { day01 } from "./days/day01.ts";
 import { day02 } from "./days/day02.ts";
 import { day03 } from "./days/day03.ts";
 import { day04 } from "./days/day04.ts";
+import { day05 } from "./days/day05.ts";
 
 const days = [
   day01,
   day02,
   day03,
   day04,
+  day05,
 ];
 
 if (import.meta.main) {
